@@ -131,7 +131,7 @@
     <repository>
       <id>PeerIndex</id>
       <name>PeerIndex</name>
-      <url>http://admin2.peerindex.net/content/repositories/releases</url>
+      <url>http://admin2.peerindex.net:8081/content/repositories/releases</url>
      
       <releases>
         <enabled>true</enabled>
@@ -144,7 +144,7 @@
         <repository>
       <id>PeerIndex 2</id>
       <name>PeerIndex snap</name>
-      <url>http://admin2.peerindex.net/nexus/content/repositories/snapshots</url>
+      <url>http://admin2.peerindex.net:8081/nexus/content/repositories/snapshots</url>
      
       <releases>
         <enabled>false</enabled>
