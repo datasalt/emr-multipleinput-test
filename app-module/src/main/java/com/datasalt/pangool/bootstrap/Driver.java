@@ -21,7 +21,7 @@ public class Driver extends ProgramDriver {
 
 	public Driver() throws Throwable {
 		super();
-		addClass("sort", SortJob.class, "Just write the input as output (text files)");
+		addClass("mijob", MIJob.class, "MultipleInput test");
 	}
 
 	public static void main(String[] args) throws Throwable {

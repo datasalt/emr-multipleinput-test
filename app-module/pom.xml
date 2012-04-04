@@ -19,16 +19,16 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>com.datasalt.pangool</groupId>
-    <artifactId>pangool-bootstrap-top-level</artifactId>
-    <version>0.40</version>
+    <groupId>com.datasalt</groupId>
+    <artifactId>emr-multipleinput-test</artifactId>
+    <version>0.1</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
-  <artifactId>pangool-bootstrap</artifactId>
+  <artifactId>emr-multipleinput-module</artifactId>
   <packaging>jar</packaging>
-  <name>Pangool Bootstrap Module</name>
-  <description>Start up module for developing with Pangool</description>
+  <name>emr-multipleinput-module</name>
+  <description></description>
  <licenses>
     <license>
       <name>The Apache Software License, Version 2.0</name>
@@ -85,12 +85,12 @@
     
   <dependencies>
 
-    <!-- Pangool modules -->
+     <!-- Cloudera's CDH3 Hadoop -->
     <dependency>
-    	<groupId>com.datasalt.pangool</groupId>
-    	<artifactId>pangool-core</artifactId>
-    	<version>0.40</version>
-  	</dependency>
+      <groupId>org.apache.hadoop</groupId>
+      <artifactId>hadoop-core</artifactId>
+      <version>0.20.2-cdh3u0</version>
+    </dependency>  
         
     <!-- Test dependencies -->
     <dependency>
@@ -102,4 +102,19 @@
             
  </dependencies>
 
+   <repositories>
+   <repository>
+      <id>cloudera</id>
+      <name>Cloudera Releases</name>
+      <url>https://repository.cloudera.com/content/repositories/releases</url>
+     
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+    
+  </repositories>
 </project>
