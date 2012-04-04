@@ -22,6 +22,7 @@ public class Driver extends ProgramDriver {
 	public Driver() throws Throwable {
 		super();
 		addClass("mijob", MIJob.class, "MultipleInput test");
+		addClass("mjjob", MJJob.class, "MultipleJoin test");
 	}
 
 	public static void main(String[] args) throws Throwable {
