@@ -2,6 +2,7 @@ package com.datasalt.pangool.bootstrap;
 
 import java.io.IOException;
 
+import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.hadoop.conf.Configurable;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
@@ -22,6 +23,10 @@ import org.apache.hadoop.util.ToolRunner;
 public class MIJob extends Configured implements Tool {
 	
   public static class Map1 extends Mapper<LongWritable, Text, Text, NullWritable> {
+
+  	protected void setup(org.apache.hadoop.mapreduce.Mapper<LongWritable,Text,Text,NullWritable>.Context context) throws IOException ,InterruptedException {  		
+  		System.out.println("Input Split: " + ToStringBuilder.reflectionToString(context.getInputSplit()));
+  	};
 		
 		protected void map(LongWritable key, Text value, org.apache.hadoop.mapreduce.Mapper<LongWritable,Text,Text,NullWritable>.Context context) throws IOException ,InterruptedException {
 			context.write(new Text("m1: " + value), NullWritable.get());
@@ -29,7 +34,11 @@ public class MIJob extends Configured implements Tool {
 	}
 	
   public static class Map2 extends Mapper<LongWritable, Text, Text, NullWritable> {
-		
+
+  	protected void setup(org.apache.hadoop.mapreduce.Mapper<LongWritable,Text,Text,NullWritable>.Context context) throws IOException ,InterruptedException {  		
+  		System.out.println("Input Split: " + ToStringBuilder.reflectionToString(context.getInputSplit()));
+  	};
+  	
 		protected void map(LongWritable key, Text value, org.apache.hadoop.mapreduce.Mapper<LongWritable,Text,Text,NullWritable>.Context context) throws IOException ,InterruptedException {
 			context.write(new Text("m2: " + value), NullWritable.get());
 		};		
